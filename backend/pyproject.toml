@@ -4,4 +4,19 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "aiofiles>=25.1.0",
+    "alembic>=1.18.4",
+    "asyncpg>=0.31.0",
+    "cockroachdb>=0.3.5",
+    "cryptography>=46.0.6",
+    "email-validator>=2.3.0",
+    "fastapi>=0.135.2",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.13.1",
+    "pygithub>=2.9.0",
+    "python-jose>=3.5.0",
+    "sqlalchemy-cockroachdb>=2.0.3",
+    "sqlalchemy[asyncio]>=2.0.48",
+    "uvicorn[standard]>=0.42.0",
+]
