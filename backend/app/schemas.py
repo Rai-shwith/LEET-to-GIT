@@ -19,6 +19,7 @@ class ProblemDetails(BaseModel):
     link: str
     difficulty: str
     questionId: str
+    questionFrontendId: str
     titleSlug: str
     topicTags: List[Optional[Dict[str, Any]]]
 

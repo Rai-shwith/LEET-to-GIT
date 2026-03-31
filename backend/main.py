@@ -2,7 +2,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
-from app.routers import health, oauth, upload
+from app.routers import health, oauth, upload, post
 from app.database import engine, Base
 
 @asynccontextmanager
@@ -18,3 +18,4 @@ app.add_middleware(CORSMiddleware, allow_origins=[settings.FRONTEND_URL, "http:/
 app.include_router(health.router, prefix="/health", tags=["Health"])
 app.include_router(oauth.router, prefix="/auth", tags=["Auth"])
 app.include_router(upload.router, prefix="/upload", tags=["Upload"])
+app.include_router(post.router)
