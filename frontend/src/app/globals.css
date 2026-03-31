@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg: #0a0a1a;
+    --card: #131326;
+    --card-border: #2d2d5e;
+    --nav: #0f172a;
+    --code-bg: #0d1117;
+
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --secondary: #7c3aed;
+    --cyan: #06b6d4;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    --text: #ffffff;
+    --muted: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0a0a1a;
+    color: #ffffff;
+    font-family: var(--font-geist-sans);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code,
+pre,
+kbd,
+samp,
+.terminal-font {
+    font-family: var(--font-geist-mono);
+}
+
+::selection {
+    background: rgba(79, 70, 229, 0.35);
+    color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #2d2d5e;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4f46e5;
+}
+
+/* Landing-only starfield background utility */
+.landing-starfield {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--bg);
+    overflow: hidden;
+}
+
+.landing-starfield::before,
+.landing-starfield::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.landing-starfield::before {
+    background:
+        radial-gradient(
+                circle at 12% 20%,
+                rgba(255, 255, 255, 0.22) 0 1px,
+                transparent 1.5px
+            )
+            0 0 / 180px 180px,
+        radial-gradient(
+                circle at 80% 28%,
+                rgba(255, 255, 255, 0.18) 0 1px,
+                transparent 1.5px
+            )
+            0 0 / 220px 220px,
+        radial-gradient(
+                circle at 35% 80%,
+                rgba(255, 255, 255, 0.14) 0 1px,
+                transparent 1.5px
+            )
+            0 0 / 200px 200px,
+        radial-gradient(
+                circle at 60% 65%,
+                rgba(255, 255, 255, 0.12) 0 1px,
+                transparent 1.5px
+            )
+            0 0 / 260px 260px;
+    opacity: 0.65;
+}
+
+.landing-starfield::after {
+    background:
+        radial-gradient(
+            800px 400px at 20% 15%,
+            rgba(79, 70, 229, 0.18),
+            transparent 70%
+        ),
+        radial-gradient(
+            700px 360px at 85% 20%,
+            rgba(6, 182, 212, 0.12),
+            transparent 70%
+        ),
+        radial-gradient(
+            600px 320px at 50% 100%,
+            rgba(124, 58, 237, 0.1),
+            transparent 70%
+        );
+}
