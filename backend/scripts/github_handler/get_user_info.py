@@ -9,8 +9,9 @@ async def get_user_info(request:Request | None,token:str = None)->AuthenticatedU
     Get the user information
     """
     if not token:
-        token = request.cookies.get("access_token")
-    token = decrypt_token(token)
+        token = request.cookies.get("github_token")
+        token = decrypt_token(token)
+        
     logger.info("Getting user information")
     logger.info(f"Access token: {token}")
     try:
